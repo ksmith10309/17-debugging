@@ -5,8 +5,8 @@ import Coop from '../src/coop/model.js';
 beforeAll(startDB);
 afterAll(stopDB);
 beforeEach(async () => {
-  Chicken.deleteMany({});
-  Coop.deleteMany({});
+  await Chicken.deleteMany({});
+  await Coop.deleteMany({});
 });
 
 describe('Chicken', () => {
@@ -39,7 +39,7 @@ describe('Chicken', () => {
 
     expect(chicken.name).toBe('Joey');
 
-    const pollo = Chicken.findById(chicken);
+    const pollo = await Chicken.findById(chicken);
 
     expect(pollo.coop.location).toBe('Red Barn');  
   });

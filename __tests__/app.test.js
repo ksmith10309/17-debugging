@@ -8,8 +8,8 @@ const mockRequest = supergoose(app);
 beforeAll(startDB);
 afterAll(stopDB);
 beforeEach(async () => {
-  Chicken.deleteMany({});
-  Coop.deleteMany({});
+  await Chicken.deleteMany({});
+  await Coop.deleteMany({});
 });
 
 describe('app', () => {

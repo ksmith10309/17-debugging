@@ -6,7 +6,7 @@ const schema = new Schema({
 });
 
 schema.pre('findOne', function(next) {
-  this.populate('coops');
+  this.populate('coop');
   next();
 });
 
